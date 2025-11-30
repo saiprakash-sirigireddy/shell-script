@@ -28,6 +28,7 @@ INSTALLED(){
         VALIDATE $? "Installing $1"
     else
         echo -e "$1 is already ... $Y INSTALLED"
+    fi
 }
 
 SOFTWARES=("mysql" "git")
