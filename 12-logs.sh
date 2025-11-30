@@ -13,7 +13,7 @@
 #!/bin/bash
 LOGS_FOLDER="/var/log/shellscript-logs"
 LOG_FILE=$(echo $0 | cut -d "." f1)
-TIMESTAMP=$(+%Y-%m-%d-%H-%M-%S)
+TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 R="\e[31m"
 G="\e[32m"
