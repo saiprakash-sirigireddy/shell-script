@@ -10,7 +10,7 @@
 # 2 -- denotes failure
 # & -- denotes both success and failure
 
-#!/bin/bash
+
 LOGS_FOLDER="/var/log/shellscript-logs"
 LOG_FILE=$(echo $0 | awk -F'.' '{print $1}')
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
