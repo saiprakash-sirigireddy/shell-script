@@ -19,6 +19,8 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 echo $LOG_FILE
+echo $LOG_FILE_NAME
+echo $TIMESTAMP
 VALIDATE(){
     if [ $1 -ne 0 ] # taking last command status as first argument
     then
