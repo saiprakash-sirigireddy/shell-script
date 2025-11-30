@@ -20,22 +20,16 @@ then
     exit 1
 fi
 
-dnf list installed mysql
+INSTALLED(){
+    dnf list installed $1
+    if [ $? -ne 0 ]
+    then
+        dnf install $1 -y
+        VALIDATE $? "Installing $1"
+    else
+        echo -e "$1 is already ... $Y INSTALLED"
+}
 
-if [ $? -ne 0 ]
-then
-    dnf install mysql -y
-    VALIDATE $? "Installing MySQL"
-else
-    echo -e "MySQL is already ... $Y INSTALLED"
-fi
-
-dnf list installed git
-
-if [ $? -ne 0 ]
-then
-    dnf install mysql -y
-    VALIDATE $? "Installing git"
-else
-    echo -e "git is already ... $Y INSTALLED"
-fi
+SOFTWARES=("mysql" "git")
+INSTALLED ${SOFTWARES[0]}
+INSTALLED ${SOFTWARES[1]}
