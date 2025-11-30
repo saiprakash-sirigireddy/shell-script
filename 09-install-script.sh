@@ -8,7 +8,7 @@ then
     exit 1 # setting exit status as other than 0 if fails
 fi
 
-dnf installed list mysql # To check if mysql is already installed
+dnf list installed mysql # To check if mysql is already installed
 
 if [ $? -ne 0 ] # last command exit stauts is not 0 means not installed
 then
@@ -24,7 +24,7 @@ else
     echo "MySQL is already ... INSTALLED"
 fi
 
-dnf installed list git
+dnf list installed git
 
 if [ $? -ne 0 ]
 then
